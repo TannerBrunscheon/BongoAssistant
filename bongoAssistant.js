@@ -1,8 +1,6 @@
 // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
 // for Dialogflow fulfillment library docs, samples, and to report issues
 'use strict';
-const { WebhookClient } = require('dialogflow-fulfillment');
-const { Card, Suggestion } = require('dialogflow-fulfillment');
 
 exports.handler = (event, context, callback) => {
   const done = (err, res) =>
@@ -17,16 +15,16 @@ exports.handler = (event, context, callback) => {
   // uncomment `intentMap.set('your intent name here', yourFunctionHandler);`
   // below to get this function to be run when a Dialogflow intent is matched
   function busStopHandler(agent) {
-    const stop = agent.parameters['bus-stop'][0];
-    agent.add('Hey you asked for a bus stop!');
-    returnJSON.payload.google = {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          { simpleResponse: { textToSpeech: 'this is a simple response' } }
-        ]
+    returnJSON.payload = {
+      google : {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            { simpleResponse: { textToSpeech: 'this is a simple response' } }
+          ]
+        }
       }
-    };
+  }
   }
 
   // Uncomment and edit to make your own Google Assistant intent handler
@@ -35,11 +33,11 @@ exports.handler = (event, context, callback) => {
   function googleBusStopHandler(agent) {}
   // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs/tree/master/samples/actions-on-google
   // for a complete Dialogflow fulfillment library Actions on Google client library v2 integration sample
+  let returnJSON = new Object();
   switch (event.body.queryResult.intent.displayName) {
     case 'Bus Stop Prediction': {
       busStopHandler(event.body.queryResult);
     }
   }
   // Run the proper function handler based on the matched Dialogflow intent name
-  let returnJSON = new Object();
 };
