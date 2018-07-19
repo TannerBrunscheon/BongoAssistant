@@ -1,0 +1,23 @@
+{
+  "name": "bongoassistant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bongoAssistant.js",
+  "dependencies": {
+    "dialogflow-fulfillment": "^0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TannerBrunscheon/BongoAssistant.git"
+  },
+  "author": "Tanner Brunscheon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TannerBrunscheon/BongoAssistant/issues"
+  },
+  "homepage": "https://github.com/TannerBrunscheon/BongoAssistant#readme"
+}
