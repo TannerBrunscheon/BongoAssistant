@@ -4,7 +4,7 @@
   "description": "",
   "main": "bongoAssistant.js",
   "dependencies": {
-    "dialogflow-fulfillment": "^0.4.1"
+    "jsonrequest": "^4.2.4"
   },
   "devDependencies": {},
   "scripts": {
